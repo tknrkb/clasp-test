@@ -14,3 +14,7 @@ npx tslint --init
 code src/main.ts
 npx clasp push -P src
 npx clasp open -P src
+
+code src/sidebar.ts
+npx clasp push -P src
+
