@@ -4,4 +4,6 @@ npm install -D tslint typescript
 npm install -S @types/google-apps-script
 npm install -D @google/clasp
 
-  
+npx clasp login
+mkdir src
+npx clasp create --type sheets --title clasp-test --rootDir ./src
