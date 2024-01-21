@@ -1,10 +1,36 @@
 <script>
     function updateFootNote() {
-      document.getElementById("footnote").innerHTML = 'XXXXXXXX';
+      document.getElementById("footnote").innerHTML = '';
     }
+
+    function onFailure(a, b) {
+      document.getElementById("footnote").innerHTML = 'FAIL!!';
+      console.log([a,b]);
+    }
+
+    function onSuccess(a, b) {
+      document.getElementById("footnote").innerHTML = 'SUCCESS!!';
+      console.log([a,b]);
+    }
+
     function onClickTEST() {
       document.getElementById("footnote").innerHTML = 'click!!';
+      google.script.run
+      .withFailureHandler(onFailure)
+      .withSuccessHandler(onSuccess)
+      .withUserObject({ event: "test click" })
+      .clickTEST();
     }
+    
+    function onClickTEST2() {
+      document.getElementById("footnote").innerHTML = 'click 2!!';
+      google.script.run
+      .withFailureHandler(onFailure)
+      .withSuccessHandler(onSuccess)
+      .withUserObject({ event: "test2 click" })
+      .clickTEST2();
+    }
+    
     updateFootNote();
 </script>
     
